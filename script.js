@@ -26,5 +26,22 @@ const todoList = [
 
     }
 ]
-const divEl = document.getElementById('todoListId')
-divEl.innerText = todoList
+const todosListEl = document.getElementById('todoListId')
+// divEl.innerText = todoList
+// todoList.forEach(function(el){
+//     const wrap = document.createElement('div')
+//     const name = document.createElement('div')
+//     name.innerText = el.name
+//     const description = document.createElement('div')
+//     description.innerText = el.description
+//     wrap.append(name)
+//     wrap.append(description)
+//     todosListEl.append(wrap)
+// })
+
+
+todoList.forEach(function(el){
+    const todo = document.createElement('div')
+    todo.innerHTML = `<div>${el.name}</div><div>${el.description}</div>`
+    todosListEl.append(todo)
+})
