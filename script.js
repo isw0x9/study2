@@ -28,20 +28,23 @@ const todoList = [
 ]
 const todosListEl = document.getElementById('todoListId')
 // divEl.innerText = todoList
-// todoList.forEach(function(el){
-//     const wrap = document.createElement('div')
-//     const name = document.createElement('div')
-//     name.innerText = el.name
-//     const description = document.createElement('div')
-//     description.innerText = el.description
-//     wrap.append(name)
-//     wrap.append(description)
-//     todosListEl.append(wrap)
-// })
-
-
 todoList.forEach(function(el){
-    const todo = document.createElement('div')
-    todo.innerHTML = `<div>${el.name}</div><div>${el.description}</div>`
-    todosListEl.append(todo)
+    const wrap = document.createElement('div')
+    wrap.classList = 'wrap'
+    const name = document.createElement('div')
+    name.classList = 'name'
+    name.innerText = el.name
+    const description = document.createElement('div')
+    description.classList = 'description'
+    description.innerText = el.description
+    wrap.append(name)
+    wrap.append(description)
+    todosListEl.append(wrap)
 })
+
+
+// todoList.forEach(function(el){
+//     const todo = document.createElement('div')
+//     todo.innerHTML = `<div class="name">${el.name}</div><div class="description">${el.description}</div>`
+//     todosListEl.append(todo)
+// })
