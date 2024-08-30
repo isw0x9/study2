@@ -48,3 +48,20 @@ todoList.forEach(function(el){
 //     todo.innerHTML = `<div class="name">${el.name}</div><div class="description">${el.description}</div>`
 //     todosListEl.append(todo)
 // })
+
+function save() {
+    console.log("save")
+    const nameEl = document.getElementById("name")
+    const descriptionEl = document.getElementById("description")
+    console.log(nameEl)
+    if (nameEl.value == '' || descriptionEl.value == '')  {
+        alert("Пустеы значения")
+        return
+    }
+    const newTodo = {
+        name: nameEl.value,
+        description: descriptionEl.value
+    }
+    todoList.push(newTodo)
+    console.log(todoList)
+}
